@@ -1,0 +1,299 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    "menu-lateral"
+    "filtro"
+    "imagenes"
+    "paginado"
+    "footer";
+  min-height: 100vh;
+  grid-template-columns: 100%;
+  grid-template-rows: 80px 80px auto 70px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.menu-lateral {
+  display: flex;
+  grid-area: menu-lateral;
+  background-color: blueviolet;
+  padding: 10px;
+  justify-content: start;
+  align-items: center;
+}
+.hamburguesa {
+  display: flex;
+   font-size: 28px;
+  justify-content: right;
+  align-items: center;
+  width: 300px;
+  cursor: pointer;
+}
+.guitarra {
+  font-size: 28px;
+}
+span {
+  font-size: 20px;
+}
+.lista {
+  display: none;
+  list-style: none;
+}
+span {
+  margin-left: 10px;
+}
+
+.filtro {
+  grid-area: filtro;
+  background-color: rgb(6, 195, 195);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 20px;
+}
+label {
+  display: flex;
+  flex-direction: column;
+}
+select {
+  width: 250px;
+  height: 40px;
+  border-radius: 5px;
+}
+.imagenes {
+  display: grid;
+  grid-area: imagenes;
+  grid-template-columns: 100%;
+  gap: 10px;
+  margin-top: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+img {
+  width: 200px;
+  height: 250px;
+  align-items: center;
+  justify-content: center;
+}
+.productos {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: outset;
+  border-radius: 5px;
+  gap: 10px;
+  width: 100%;
+}
+.paginado {
+  grid-area: paginado;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.paginado p {
+  border: 1px solid blue;
+  width: 20px;
+  height: 20px;
+  border-radius: 3px;
+  text-align: center;
+  background-color: rgb(202, 216, 215);
+  margin-bottom: 10px;
+  color: blue;
+}
+main button {
+  text-align: center;
+  background-color: rgb(164, 136, 226);
+  margin-bottom: 10px;
+  width: 200px;
+  border-radius: 10px;
+  color: azure;
+  height: 40px;
+}
+button {
+  text-align: center;
+  background-color: rgb(85, 20, 226);
+  margin-bottom: 10px;
+  width: 100px;
+  border-radius: 10px;
+  color: azure;
+}
+footer {
+  grid-area: footer;
+  background-color: midnightblue;
+  color: white;
+  text-align: center;
+}
+.contacto {
+  margin-top: 10px;
+}
+footer p {
+  margin-bottom: 10px;
+}
+menu ul {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+i {
+  color: white;
+}
+
+@media (width>=576px) {
+  .grid-container {
+    display: grid;
+    grid-template-areas:
+      "menu-lateral menu-lateral"
+      "filtro imagenes"
+      "filtro paginado"
+      "footer footer";
+    grid-template-columns: 20% auto;
+    grid-template-rows: 80px auto 60px;
+    min-height: 100vh;
+  }
+  .paginado {
+    grid-area: paginado;
+  }
+  .paginado p {
+    border: 1px solid blue;
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    text-align: center;
+    background-color: rgb(219, 228, 89);
+    margin-bottom: 10px;
+    color: blue;
+  }
+  .lista {
+    display: flex;
+
+    gap: 10px;
+  }
+  .hamburguesa {
+    display: none;
+  }
+
+  .filtro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+  }
+  label {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 15px;
+  }
+  select {
+    width: auto;
+  }
+
+  .imagenes {
+    grid-template-columns: 1fr 1fr;
+    margin: 10px;
+  }
+
+  footer {
+    background-color: midnightblue;
+    color: white;
+   
+    text-align: center;
+  }
+  .menu-lateral {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    align-items: center;
+  }
+  span {
+    color: white;
+    margin-left: 10px;
+  }
+  i {
+    color: white;
+  }
+}
+
+@media (width>=992px) {
+  .grid-container {
+    display: grid;
+    grid-template-areas:
+      "menu-lateral filtro"
+      "menu-lateral imagenes"
+      "footer paginado";
+    grid-template-columns: 20% auto;
+    grid-template-rows: 100px auto 70px;
+    min-height: 100vh;
+  }
+  .paginado {
+    grid-area: paginado;
+
+  }
+  .paginado p {
+    border: 1px solid blue;
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    text-align: center;
+    background-color: white;
+    margin-bottom: 10px;
+    color: blue;
+  }
+
+  .lista {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .hamburguesa {
+    display: none;
+  }
+  .filtro {
+    display: flex;
+    flex-direction: column;
+  }
+  label {
+    text-align: center;
+  }
+  select {
+    width: 900px;
+    height: 30px;
+  }
+
+  .imagenes {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin: 10px;
+  }
+
+  footer {
+    background-color: midnightblue;
+    color: white;
+    text-align: center;
+  }
+  footer p {
+    font-size: 12px;
+  }
+  .menu-lateral {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: start;
+    align-items: center;
+  }
+  span {
+    color: white;
+    margin-left: 10px;
+  }
+  i {
+    color: white;
+  }
+}
